@@ -2,6 +2,9 @@
 
 Crypture is a modern, real-time cryptocurrency tracking application built with React, TypeScript, and Tailwind CSS. It provides users with a comprehensive platform to monitor cryptocurrency prices, track portfolios, and analyze historical data.
 
+### Check out the website here: https://crypture-ruddy.vercel.app/
+### Repo link : https://github.com/HerambInamke/Real-Time-Crypto-Price-Tracker.-.git
+
 ## 🌟 Features
 
 ### Real-time Tracking
@@ -156,3 +159,6 @@ src/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+---
+
+# watch the video explanation in this Drive link: [https://drive.google.com/file/d/1hb1XyYRiplGlsagd9gdWa6c9gDYhlBOV/view?usp=sharing].
