@@ -1,64 +1,54 @@
-# Real-Time Cryptocurrency Tracker
+# Crypture - Cryptocurrency Tracking Application
 
-A modern, responsive web application for tracking cryptocurrency prices and market data in real-time. Built with React, TypeScript, and Tailwind CSS, this application provides a comprehensive view of the cryptocurrency market with advanced features and a beautiful user interface.
+Crypture is a modern, real-time cryptocurrency tracking application built with React, TypeScript, and Tailwind CSS. It provides users with a comprehensive platform to monitor cryptocurrency prices, track portfolios, and analyze historical data.
 
 ## 🌟 Features
 
-### Real-time Price Updates
-- Live price updates every 2 seconds
-- Color-coded price changes for quick visual feedback
-- Pulsing "LIVE" indicator showing active updates
-- Smooth animations for price changes
+### Real-time Tracking
+- Live price updates for major cryptocurrencies
+- Real-time price changes with visual indicators
+- Market cap and volume tracking
+- Circulating supply information
+
+### Portfolio Management
+- Track multiple cryptocurrency holdings
+- Calculate total portfolio value
+- Monitor profit/loss in real-time
+- Visual portfolio distribution
+- Add/remove assets with ease
+- Persistent storage using localStorage
+
+### Historical Data Analysis
+- Interactive price charts
+- Multiple time ranges (24H, 7D, 30D, 90D, 1Y)
+- Price statistics and trends
+- Market performance metrics
 
 ### Advanced Filtering & Sorting
-- Search cryptocurrencies by name or symbol
-- Sort by multiple criteria:
-  - Rank
-  - Name
-  - Price
-  - 24h Change
-  - Market Cap
-  - Volume
-- Toggle between ascending and descending order
-- Responsive filters that work on all devices
-
-### Interactive Charts
-- 7-day price trend visualization
-- Expandable chart view for detailed analysis
-- Interactive tooltips with price data
-- Color-coded charts (green for positive, red for negative trends)
-- Responsive design for all screen sizes
-
-### Market Information
-- Comprehensive market data display:
-  - Current price
-  - Price changes (1h, 24h, 7d)
-  - Market Cap
-  - 24h Volume
-  - Circulating Supply
-  - Maximum Supply (where applicable)
-- Tooltips with detailed explanations
-- Formatted numbers for better readability
+- Filter cryptocurrencies by name
+- Sort by price, market cap, or volume
+- Search functionality
+- Responsive table layout
 
 ### User Experience
-- Favorites system for quick access to preferred cryptocurrencies
-- Responsive design for mobile and desktop
+- Clean, modern UI design
+- Responsive layout for all devices
 - Smooth animations and transitions
 - Intuitive navigation
-- Back to home button for easy navigation
+- Dark/light mode support
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- npm or yarn
+- npm or yarn package manager
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
-cd cryptocurrency-tracker
+git clone https://github.com/HerambInamke/Real-Time-Crypto-Price-Tracker.-.git
+cd crypture
 ```
 
 2. Install dependencies:
@@ -75,97 +65,88 @@ npm run dev
 yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-### Building for Production
-
+4. Build for production:
 ```bash
 npm run build
 # or
 yarn build
 ```
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```
 src/
 ├── components/         # React components
-│   ├── CryptoTable.tsx    # Main cryptocurrency table
-│   ├── CryptoFilters.tsx  # Search and sort controls
-│   ├── MiniChart.tsx      # Price chart component
-│   ├── PriceChange.tsx    # Price change indicator
-│   └── Header.tsx         # Application header
+│   ├── CryptoTable.tsx
+│   ├── CryptoTracker.tsx
+│   ├── Header.tsx
+│   ├── HistoricalData.tsx
+│   ├── PortfolioTracker.tsx
+│   └── PriceChange.tsx
 ├── pages/             # Page components
-│   └── Home.tsx          # Landing page
-├── store/             # Redux store and slices
-│   ├── index.ts          # Store configuration
-│   └── cryptoSlice.ts    # Cryptocurrency state management
-├── types/             # TypeScript type definitions
-│   └── crypto.ts         # Cryptocurrency interfaces
+│   └── Home.tsx
+├── store/             # Redux store
+│   ├── cryptoSlice.ts
+│   └── index.ts
+├── services/          # Services and utilities
+│   └── websocketSimulator.ts
+├── types/             # TypeScript types
+│   └── crypto.ts
 ├── utils/             # Utility functions
-│   └── formatters.ts     # Number and currency formatting
-├── services/          # API and WebSocket services
-│   ├── mockData.ts       # Mock cryptocurrency data
-│   └── websocketSimulator.ts # Real-time updates simulation
-└── assets/           # Static assets
-    └── bitcoin.png       # Bitcoin logo
+│   └── formatters.ts
+└── App.tsx           # Main application component
 ```
 
-## 💻 Technologies Used
+## 🛠️ Technologies Used
 
-- **Frontend Framework**: React 18
+- **Frontend Framework**: React
 - **Language**: TypeScript
 - **State Management**: Redux Toolkit
 - **Styling**: Tailwind CSS
 - **Charts**: Chart.js with react-chartjs-2
-- **Icons**: Lucide Icons
+- **Icons**: Lucide React
 - **Build Tool**: Vite
 - **Package Manager**: npm/yarn
 
-## 🔧 How It Works
+## 🔄 How It Works
 
 ### Real-time Updates
-The application simulates real-time updates using a WebSocket simulator that:
-- Updates prices every 2 seconds
-- Generates realistic price movements
-- Updates volume and market data
-- Maintains price change history
+- WebSocket simulator for live price updates
+- Redux store for state management
+- Efficient re-rendering with React
 
 ### Data Flow
-1. Initial data is loaded from mock data
-2. WebSocket simulator connects on component mount
-3. Price updates are dispatched to Redux store
-4. Components re-render with new data
-5. Charts and indicators update smoothly
+1. WebSocket connection receives price updates
+2. Updates are dispatched to Redux store
+3. Components subscribe to relevant state changes
+4. UI updates automatically with new data
 
 ### State Management
-- Redux store manages application state
-- CryptoSlice handles cryptocurrency data
-- Selectors provide optimized data access
-- Actions handle price updates and error states
+- Centralized Redux store
+- Slices for different features
+- Selectors for efficient data access
+- Persistent storage for user data
 
 ### Responsive Design
 - Mobile-first approach
-- Responsive table layout
-- Collapsible columns on smaller screens
-- Touch-friendly controls
-- Adaptive chart sizes
+- Tailwind CSS for styling
+- Flexible layouts
+- Adaptive components
 
-## 🛠️ Development
+## 💻 Development
 
 ### Available Scripts
-
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
-- `npm run lint` - Run ESLint
 - `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript compiler
 
 ### Code Style
-- TypeScript for type safety
-- ESLint for code quality
+- ESLint for code linting
 - Prettier for code formatting
+- TypeScript for type safety
 - Component-based architecture
-- Custom hooks for reusable logic
 
 ## 🤝 Contributing
 
@@ -174,3 +155,4 @@ The application simulates real-time updates using a WebSocket simulator that:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
